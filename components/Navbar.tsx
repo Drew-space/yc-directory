@@ -3,7 +3,8 @@ import Link from "next/link";
 import React from "react";
 
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+// import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "../app/api/auth/[...nextauth]/route";
 
 import AuthButtons from "./AuthButtons";
 
