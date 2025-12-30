@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import localFont from "next/font/local";
 import path from "path";
+import "easymde/dist/easymde.min.css"
 
 const workSans = localFont({
   src: [
