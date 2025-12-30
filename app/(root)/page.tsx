@@ -1,7 +1,8 @@
 import SearchForm from "@/components/SearchForm";
 import StartupCard from "@/components/StartupCard";
-import { Star } from "lucide-react";
-import { title } from "process";
+import { client } from "@/sanity/lib/client";
+import { STARTUPS_QUERY } from "@/sanity/lib/queries";
+
 export default async function Home({
   searchParams,
 }: {
@@ -9,19 +10,26 @@ export default async function Home({
 }) {
   const query = (await searchParams).query;
 
-  const posts = [
-    {
-      _createdAt: new Date(),
-      views: 550,
-      author: { _id: 1, name: "Drew" },
-      _id: 1,
-      description: "This is a sample description for the startup post.",
-      image:
-        "https://images.unsplash.com/photo-1717347424091-08275b73c918?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Robots",
-      title: "We Robotics",
-    },
-  ];
+  const posts = await client.fetch(STARTUPS_QUERY)
+
+  console.log(JSON.stringify(posts, null, 2));
+
+
+
+
+  // const posts = [
+  //   {
+  //     _createdAt: new Date(),
+  //     views: 550,
+  //     author: { _id: 1, name: "Drew" },
+  //     _id: 1,
+  //     description: "This is a sample description for the startup post.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1717347424091-08275b73c918?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Robots",
+  //     title: "We Robotics",
+  //   },
+  // ];
 
   return (
     <>
