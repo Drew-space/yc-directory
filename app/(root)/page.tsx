@@ -13,9 +13,9 @@ export default async function Home({
     {
       _createdAt: new Date(),
       views: 550,
-      author: { _id: 1 },
+      author: { _id: 1, name: "Drew" },
       _id: 1,
-      describion: "This is a sample description for the startup post.",
+      description: "This is a sample description for the startup post.",
       image:
         "https://images.unsplash.com/photo-1717347424091-08275b73c918?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       category: "Robots",
